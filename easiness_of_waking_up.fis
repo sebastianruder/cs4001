@@ -1,0 +1,81 @@
+[System]
+Name='easiness_of_waking_up'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=2
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='CurrentSleepCycle'
+Range=[0 1]
+NumMFs=3
+MF1='Awake':'gaussmf',[0.139349238645698 0]
+MF2='LightlyAsleep':'gaussmf',[0.176456759971296 0.522]
+MF3='FastAsleep':'gaussmf',[0.140293979246686 1]
+
+[Input2]
+Name='TimeAvailableToSleep'
+Range=[0 12]
+NumMFs=3
+MF1='Little':'gaussmf',[2.34106720924773 8.33e-17]
+MF2='Normal':'gaussmf',[2.04 7.12222246941046]
+MF3='ALot':'gaussmf',[2.602 12]
+
+[Input3]
+Name='QualityOfSleep'
+Range=[0 1]
+NumMFs=3
+MF1='Bad':'gaussmf',[0.1699 6.939e-18]
+MF2='Normal':'gaussmf',[0.1699 0.5]
+MF3='Good':'gaussmf',[0.1699 1]
+
+[Output1]
+Name='VolumeOfAlarm'
+Range=[0 100]
+NumMFs=3
+MF1='Low':'gaussmf',[16.99 -4.441e-16]
+MF2='Medium':'gaussmf',[16.99 50]
+MF3='High':'gaussmf',[16.99 100]
+
+[Output2]
+Name='Coffee'
+Range=[0 3]
+NumMFs=3
+MF1='Weak':'gaussmf',[0.395373941513388 4.16e-17]
+MF2='Regular':'gaussmf',[0.49 1.4]
+MF3='Strong':'gaussmf',[0.636282794765273 3]
+
+[Rules]
+1 1 1, 1 3 (1) : 1
+1 1 2, 1 3 (1) : 1
+1 1 3, 1 2 (1) : 1
+1 2 1, 1 3 (1) : 1
+1 2 2, 1 2 (1) : 1
+1 2 3, 1 1 (1) : 1
+1 3 1, 1 2 (1) : 1
+1 3 2, 1 1 (1) : 1
+1 3 3, 1 1 (1) : 1
+2 1 1, 2 3 (1) : 1
+2 1 2, 2 3 (1) : 1
+2 1 3, 2 2 (1) : 1
+2 2 1, 2 3 (1) : 1
+2 2 2, 2 2 (1) : 1
+2 2 3, 2 2 (1) : 1
+2 3 1, 2 3 (1) : 1
+2 3 2, 2 2 (1) : 1
+2 3 3, 2 1 (1) : 1
+3 1 1, 3 3 (1) : 1
+3 1 2, 3 3 (1) : 1
+3 1 3, 3 3 (1) : 1
+3 2 1, 3 3 (1) : 1
+3 2 2, 3 3 (1) : 1
+3 2 3, 3 2 (1) : 1
+3 3 1, 3 3 (1) : 1
+3 3 2, 3 2 (1) : 1
+3 3 3, 3 2 (1) : 1
