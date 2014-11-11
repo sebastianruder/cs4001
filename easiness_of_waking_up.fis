@@ -21,11 +21,11 @@ MF3='FastAsleep':'gaussmf',[0.140293979246686 1]
 
 [Input2]
 Name='TimeAvailableToSleep'
-Range=[0 12]
+Range=[0 720]
 NumMFs=3
-MF1='Little':'gaussmf',[2.34106720924773 8.33e-17]
-MF2='Normal':'gaussmf',[2.04 7.12222246941046]
-MF3='ALot':'gaussmf',[2.602 12]
+MF1='Little':'gaussmf',[140.5 4.998e-15]
+MF2='Normal':'gaussmf',[122.4 427.3]
+MF3='ALot':'gaussmf',[156.1 720]
 
 [Input3]
 Name='QualityOfSleep'
