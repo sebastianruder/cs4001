@@ -1,0 +1,73 @@
+[System]
+Name='EasinessOfFallingAsleep'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='LastMealOrDrink'
+Range=[0 240]
+NumMFs=3
+MF1='JustNow':'trimf',[0 0 120]
+MF2='SomeTimeAgo':'trimf',[60 180 240]
+MF3='LongTimeAgo':'trimf',[180 240 240]
+
+[Input2]
+Name='SleptDayBefore'
+Range=[0 720]
+NumMFs=3
+MF1='Little':'trimf',[0 0 360]
+MF2='Normal':'trapmf',[240 360 480 600]
+MF3='ALot':'smf',[480 600]
+
+[Input3]
+Name='ActivityDuringDay'
+Range=[0 3000]
+NumMFs=3
+MF1='Little':'trimf',[-1200 0 2400]
+MF2='Normal':'trimf',[1100 1750 2400]
+MF3='ALot':'smf',[1100 2400]
+
+[Output1]
+Name='EasinessOfFallingAsleep'
+Range=[0 1]
+NumMFs=3
+MF1='Easy':'trimf',[-0.4 0 0.4]
+MF2='Normal':'trimf',[0.1 0.5 0.9]
+MF3='Hard':'trimf',[0.6 1 1.4]
+
+[Rules]
+2 1 3, 1 (1) : 1
+2 1 2, 1 (1) : 1
+2 1 1, 1 (1) : 1
+2 2 1, 2 (1) : 1
+2 2 3, 1 (1) : 1
+2 3 3, 1 (1) : 1
+2 3 2, 2 (1) : 1
+2 3 1, 3 (1) : 1
+1 3 1, 3 (1) : 1
+1 3 2, 3 (1) : 1
+1 3 3, 2 (1) : 1
+1 2 3, 2 (1) : 1
+1 2 2, 3 (1) : 1
+1 2 1, 3 (1) : 1
+1 1 1, 1 (1) : 1
+1 1 2, 1 (1) : 1
+1 1 3, 1 (1) : 1
+3 1 3, 1 (1) : 1
+3 1 2, 1 (1) : 1
+3 1 1, 2 (1) : 1
+3 2 1, 3 (1) : 1
+3 2 2, 3 (1) : 1
+3 2 3, 2 (1) : 1
+3 3 3, 2 (1) : 1
+3 3 2, 3 (1) : 1
+3 3 1, 3 (1) : 1
+2 2 2, 1 (1) : 1
