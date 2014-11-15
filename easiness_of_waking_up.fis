@@ -15,9 +15,9 @@ DefuzzMethod='centroid'
 Name='CurrentSleepCycle'
 Range=[0 1]
 NumMFs=3
-MF1='Awake':'gaussmf',[0.139349238645698 0]
-MF2='LightlyAsleep':'gaussmf',[0.176456759971296 0.522]
-MF3='FastAsleep':'gaussmf',[0.140293979246686 1]
+MF1='Awake':'gbellmf',[0.2 5.67 0.030741935483871]
+MF2='LightlyAsleep':'gbellmf',[0.200222469410456 3.28 0.5]
+MF3='FastAsleep':'gbellmf',[0.1855 9.275 0.9355]
 
 [Input2]
 Name='TimeAvailableToSleep'
