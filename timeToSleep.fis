@@ -1,0 +1,107 @@
+[System]
+Name='timeToSleep'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=54
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='commuteT'
+Range=[0 120]
+NumMFs=5
+MF1='veryShort':'trapmf',[0 0 5 15]
+MF2='average':'trimf',[25 35 45]
+MF3='veryLong':'trapmf',[60 75 120 120]
+MF4='short':'trimf',[5 15 30]
+MF5='long':'trimf',[30 50 70]
+
+[Input2]
+Name='easeSleep'
+Range=[0 1]
+NumMFs=3
+MF1='easy':'trapmf',[0 0 0 0.4]
+MF2='normal':'trimf',[0.1 0.5 0.9]
+MF3='hard':'trimf',[0.6 1 1]
+
+[Input3]
+Name='TtoSleep'
+Range=[0 600]
+NumMFs=5
+MF1='little':'trimf',[240 300 380]
+MF2='average':'trimf',[298 380 450]
+MF3='lots':'trapmf',[450 510 600 600]
+MF4='veryLittle':'trapmf',[0 0 240 300]
+MF5='more':'trimf',[400 450 500]
+
+[Output1]
+Name='SleepDuration'
+Range=[0 1]
+NumMFs=6
+MF1='little':'trimf',[0.5 0.575 0.65]
+MF2='normal':'trimf',[0.7 0.75 0.8]
+MF3='lots':'trapmf',[0.8 0.9 1 1]
+MF4='lessNormal':'trimf',[0.6 0.675 0.75]
+MF5='veryLittle':'trapmf',[0 0 0.375 0.5733]
+MF6='moreNormal':'trimf',[0.75 0.8 0.85]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 0 1, 2 (1) : 1
+1 0 2, 6 (1) : 1
+1 0 2, 3 (1) : 1
+4 0 4, 1 (0.7) : 1
+4 0 1, 2 (0.7) : 1
+4 0 2, 6 (0.7) : 1
+4 0 5, 3 (1) : 1
+4 0 3, 3 (1) : 1
+2 0 4, 5 (0.7) : 1
+2 0 1, 4 (0.7) : 1
+2 0 2, 2 (0.7) : 1
+2 0 5, 6 (1) : 1
+2 0 3, 3 (1) : 1
+5 0 4, 5 (0.7) : 1
+5 0 1, 1 (0.7) : 1
+5 0 2, 4 (0.7) : 1
+5 0 5, 2 (1) : 1
+5 0 3, 6 (1) : 1
+3 0 4, 5 (0.7) : 1
+3 0 1, 5 (0.7) : 1
+3 0 2, 1 (0.7) : 1
+3 0 5, 4 (1) : 1
+3 0 3, 2 (1) : 1
+0 3 4, 5 (1) : 1
+0 3 1, 5 (1) : 1
+0 3 2, 1 (1) : 1
+0 3 5, 4 (1) : 1
+0 3 3, 2 (1) : 1
+0 2 4, 1 (1) : 1
+0 2 1, 4 (1) : 1
+0 2 2, 2 (1) : 1
+0 2 5, 6 (1) : 1
+0 2 3, 3 (1) : 1
+0 1 4, 4 (1) : 1
+0 1 1, 2 (1) : 1
+0 1 2, 6 (1) : 1
+0 1 5, 3 (1) : 1
+0 1 3, 3 (1) : 1
+1 3 0, 6 (1) : 1
+1 2 0, 3 (1) : 1
+1 1 0, 3 (1) : 1
+4 3 0, 2 (1) : 1
+4 2 0, 6 (1) : 1
+4 1 0, 3 (1) : 1
+2 3 0, 4 (1) : 1
+2 2 0, 2 (1) : 1
+2 1 0, 6 (1) : 1
+5 3 0, 1 (1) : 1
+5 2 0, 4 (1) : 1
+5 1 0, 2 (1) : 1
+3 3 0, 5 (1) : 1
+3 2 0, 1 (1) : 1
+3 1 0, 4 (1) : 1
