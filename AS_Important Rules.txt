@@ -1,0 +1,32 @@
+------------------------------------------------
+
+---rules that heavily influence more sleep---
+
+We can sleep longer if we know the commute will be short and we have a decent amount of time to sleep:
+if (commuteT is veryShort) and (TtoSleep is average) then (SleepDuration is lots)
+if (commuteT is short) and (TtoSleep is more/lots) then (SleepDuration is lots)
+if (commuteT is average) and (TtoSleep is lots) then (SleepDuration is lots)
+
+If we can get to sleep reasonably well, and we have a decent amount of time to sleep, we sleep more:
+if (easeSleep is normal) and (TtoSleep is lots) then (SleepDuration is lots)
+if (easeSleep is easy) and (TtoSleep is more/lots) then (SleepDuration is lots)
+
+If our commute is short, and we get to sleep very easily, we can sleep more of the time available:
+if (commuteT is veryShort) and (easeSleep is normal/easy) then (SleepDuration is lots)
+if (commuteT is short) and (easeSleep is easy) then (SleepDuration is lots)
+
+------------------------------------------------
+
+---rules that heavily influence less sleep---
+
+If we know we have long to travel, and little time to sleep, we can't use as much of the available time:
+if (commuteT is average/long/verylong) and (TtoSleep is veryLittle) then (SleepDuration is veryLittle)
+if (commuteT is verylong) and (TtoSleep is Little) then (SleepDuration is veryLittle)
+
+If it is hard to sleep, and we have little time to sleep, then we can't sleep for as long:
+if (easeSleep is hard) and (TtoSleep is little/veryLittle) then (SleepDuration is veryLittle)
+
+If the commute is long, and it's hard to fall asleep, then we can't sleep for as long:
+if (commuteT is verylong) and (easeSleep is hard) then (SleepDuration is veryLittle)
+
+------------------------------------------------
