@@ -1,0 +1,37 @@
+------------------------------------------------
+
+---rules that heavily influence easiness of falling asleep---
+
+We will more easily fall asleep if we have slept little the day before (all rules except one that include slept little day before have easy as output).
+If (LastMealOrDrink is SomeTimeAgo) and (SleptDayBefore is Little) and (ActivityDuringDay is ALot) then (EasinessOfFallingAsleep is Easy)
+If (LastMealOrDrink is SomeTimeAgo) and (SleptDayBefore is Little) and (ActivityDuringDay is Normal) then (EasinessOfFallingAsleep is Easy)   
+If (LastMealOrDrink is SomeTimeAgo) and (SleptDayBefore is Little) and (ActivityDuringDay is Little) then (EasinessOfFallingAsleep is Easy)  
+If (LastMealOrDrink is JustNow) and (SleptDayBefore is Little) and (ActivityDuringDay is Little) then (EasinessOfFallingAsleep is Easy)      
+If (LastMealOrDrink is JustNow) and (SleptDayBefore is Little) and (ActivityDuringDay is Normal) then (EasinessOfFallingAsleep is Easy)
+If (LastMealOrDrink is JustNow) and (SleptDayBefore is Little) and (ActivityDuringDay is ALot) then (EasinessOfFallingAsleep is Easy)
+If (LastMealOrDrink is LongTimeAgo) and (SleptDayBefore is Little) and (ActivityDuringDay is ALot) then (EasinessOfFallingAsleep is Easy)
+If (LastMealOrDrink is LongTimeAgo) and (SleptDayBefore is Little) and (ActivityDuringDay is Normal) then (EasinessOfFallingAsleep is Easy)
+
+Normality also leads to easily falling asleep
+If (LastMealOrDrink is SomeTimeAgo) and (SleptDayBefore is Normal) and (ActivityDuringDay is Normal) then (EasinessOfFallingAsleep is Easy)
+
+------------------------------------------------
+
+---rules that shows it's hard to fall asleep ---
+
+Almost half of the rules (4/9) that results in it being hard to fall asleep includes that we have eaten a long time ago
+If (LastMealOrDrink is LongTimeAgo) and (SleptDayBefore is ALot) and (ActivityDuringDay is Little) then (EasinessOfFallingAsleep is Hard)  
+If (LastMealOrDrink is LongTimeAgo) and (SleptDayBefore is ALot) and (ActivityDuringDay is Normal) then (EasinessOfFallingAsleep is Hard)
+If (LastMealOrDrink is LongTimeAgo) and (SleptDayBefore is Normal) and (ActivityDuringDay is Normal) then (EasinessOfFallingAsleep is Hard)
+If (LastMealOrDrink is LongTimeAgo) and (SleptDayBefore is Normal) and (ActivityDuringDay is Little) then (EasinessOfFallingAsleep is Hard)
+
+Off all the 'hard to fall asleep rules' 77% of them got atleast two rules at thier peakes (Little | ALot | LongTimeAgo | JustNow).
+If (LastMealOrDrink is SomeTimeAgo) and (SleptDayBefore is ALot) and (ActivityDuringDay is Little) then (EasinessOfFallingAsleep is Hard)
+If (LastMealOrDrink is JustNow) and (SleptDayBefore is ALot) and (ActivityDuringDay is Little) then (EasinessOfFallingAsleep is Hard)
+If (LastMealOrDrink is JustNow) and (SleptDayBefore is ALot) and (ActivityDuringDay is Normal) then (EasinessOfFallingAsleep is Hard)
+If (LastMealOrDrink is JustNow) and (SleptDayBefore is Normal) and (ActivityDuringDay is Little) then (EasinessOfFallingAsleep is Hard)
+If (LastMealOrDrink is LongTimeAgo) and (SleptDayBefore is Normal) and (ActivityDuringDay is Little) then (EasinessOfFallingAsleep is Hard)
+If (LastMealOrDrink is LongTimeAgo) and (SleptDayBefore is ALot) and (ActivityDuringDay is Normal) then (EasinessOfFallingAsleep is Hard)
+If (LastMealOrDrink is LongTimeAgo) and (SleptDayBefore is ALot) and (ActivityDuringDay is Little) then (EasinessOfFallingAsleep is Hard)
+
+------------------------------------------------
