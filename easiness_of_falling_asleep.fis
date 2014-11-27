@@ -13,11 +13,11 @@ DefuzzMethod='centroid'
 
 [Input1]
 Name='LastMealOrDrink'
-Range=[0 240]
+Range=[0 360]
 NumMFs=3
-MF1='JustNow':'trimf',[0 0 120]
-MF2='SomeTimeAgo':'trimf',[60 180 240]
-MF3='LongTimeAgo':'trimf',[180 240 240]
+MF1='JustNow':'trimf',[0 0 180]
+MF2='SomeTimeAgo':'trimf',[90 180 360]
+MF3='LongTimeAgo':'trimf',[270 360 360]
 
 [Input2]
 Name='SleptDayBefore'
